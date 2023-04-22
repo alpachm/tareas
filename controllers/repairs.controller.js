@@ -12,6 +12,7 @@ exports.getAllRepairs = catchAsync(async (req, res, next) => {
   res.status(200).json({
     status: 'success',
     message: 'All repairs has been found',
+    repairs,
   });
 });
 

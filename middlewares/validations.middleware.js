@@ -51,3 +51,13 @@ exports.createRepairValidation = [
     .withMessage('Must be a valid user ID'),
   validFields,
 ];
+
+exports.loginValidation = [
+  body('email')
+    .notEmpty()
+    .withMessage('Email cannot be empty')
+    .isEmail()
+    .withMessage('Must be a valid email'),
+  body('password').notEmpty().withMessage('Password cannot be empty'),
+  validFields,
+];

@@ -2,8 +2,14 @@ const express = require('express');
 const repairsController = require('../controllers/repairs.controller');
 const repairsMiddleware = require('../middlewares/repairs.middleware');
 const validation = require('../middlewares/validations.middleware');
+const {
+  protect,
+  protectAccountEmployee,
+} = require('../middlewares/auth.middleware');
 
 const router = express.Router();
+
+router.use(protect, protectAccountEmployee);
 
 router
   .route('/')
